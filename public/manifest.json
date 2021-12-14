@@ -1,0 +1,16 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "SRBG HR Management",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "SRBG HR Management",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "img/favicon.ico"
+    }
+  ]
+}

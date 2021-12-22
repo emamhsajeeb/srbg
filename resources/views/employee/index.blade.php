@@ -212,9 +212,9 @@
                             </div>
 
                             <div class="col-md-6 form-group">
-                                <label class="text-bold">{{trans('file.Username')}} <span class="text-danger">*</span></label>
+                                <label class="text-bold">{{trans('file.Employee ID')}} <span class="text-danger">*</span></label>
                                 <input type="text" name="username" id="username"
-                                       placeholder="{{__('Unique Value',['key'=>trans('file.Username')])}}"
+                                       placeholder="{{__('Unique Value',['key'=>trans('file.Employee ID')])}}"
                                        required class="form-control">
                             </div>
 

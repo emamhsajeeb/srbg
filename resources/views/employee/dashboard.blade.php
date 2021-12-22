@@ -148,9 +148,9 @@
 
 
                                                     <div class="col-md-4 form-group">
-                                                        <label>{{trans('file.Username')}}</label>
+                                                        <label>{{trans('file.Employee ID')}}</label>
                                                         <input type="text" name="username" id="username"
-                                                               placeholder="{{trans('file.Username')}}" required
+                                                               placeholder="{{trans('file.Employee ID')}}" required
                                                                class="form-control"
                                                                value="{{$employee->user->username}}">
                                                     </div>

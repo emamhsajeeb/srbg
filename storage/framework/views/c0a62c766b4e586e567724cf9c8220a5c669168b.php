@@ -21,17 +21,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center">
-                        <h2><?php echo e($employee->user->username); ?></h2>
+                        <h2><?php echo e($employee->user->first_name." ".$employee->user->last_name); ?></h2>
                     </div>
                     <ul class="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="general-tab" data-toggle="tab" href="#General" role="tab"
                                aria-controls="General" aria-selected="true"><?php echo e(trans('file.General')); ?></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab"
-                               aria-controls="Profile" aria-selected="false"><?php echo e(trans('file.Profile')); ?></a>
-                        </li>
+                        <!--<li class="nav-item">-->
+                        <!--    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab"-->
+                        <!--       aria-controls="Profile" aria-selected="false"><?php echo e(trans('file.Profile')); ?></a>-->
+                        <!--</li>-->
                         <li class="nav-item">
                             <a class="nav-link" id="set_salary-tab" data-toggle="tab" href="#Set_salary" role="tab"
                                aria-controls="Set_salary" aria-selected="false"><?php echo e(__('Set Salary')); ?></a>
@@ -63,63 +63,21 @@
 
                             <hr>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <ul class="nav nav-tabs vertical" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#Basic"
-                                               role="tab" aria-controls="Basic"
-                                               aria-selected="true"><?php echo e(trans('file.Basic')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('immigrations.show',$employee)); ?>"
-                                               id="immigration-tab" data-toggle="tab" data-table="immigration"
-                                               data-target="#Immigration" role="tab" aria-controls="Immigration"
-                                               aria-selected="false"><?php echo e(trans('file.Immigration')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('contacts.show',$employee)); ?>"
-                                               id="emergency-tab" data-toggle="tab" data-table="emergency"
-                                               data-target="#Emergency" role="tab" aria-controls="Emergency"
-                                               aria-selected="false"><?php echo e(__('Emergency Contacts')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('social_profile.show',$employee)); ?>"
-                                               id="social_profile-tab" data-toggle="tab" data-table="social_profile"
-                                               data-target="#Social_profile" role="tab" aria-controls="Social_profile"
-                                               aria-selected="false"><?php echo e(__('Social Profile')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('documents.show',$employee)); ?>"
-                                               id="document-tab" data-toggle="tab" data-table="document"
-                                               data-target="#Document" role="tab" aria-controls="Document"
-                                               aria-selected="false"><?php echo e(trans('file.Document')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('qualifications.show',$employee)); ?>"
-                                               id="qualification-tab" data-toggle="tab" data-table="qualification"
-                                               data-target="#Qualification" role="tab" aria-controls="Qualification"
-                                               aria-selected="false"><?php echo e(trans('file.Qualification')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('work_experience.show',$employee)); ?>"
-                                               id="work_experience-tab" data-toggle="tab" data-table="work_experience"
-                                               data-target="#Work_experience" role="tab" aria-controls="Work_experience"
-                                               aria-selected="false"><?php echo e(__('Work Experience')); ?></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo e(route('bank_account.show',$employee)); ?>"
-                                               id="bank_account-tab" data-toggle="tab" data-table="bank_account"
-                                               data-target="#Bank_account" role="tab" aria-controls="Bank_account"
-                                               aria-selected="false"><?php echo e(__('Bank Account')); ?></a>
-                                        </li>
-                                    </ul>
+                                <div class="col-md-3" id="Profile">
+                                    <!--Contents for Profile starts here-->
+                                    <?php echo e(__('Profile Picture')); ?>
+
+                                    <hr>
+        
+                                <?php echo $__env->make('employee.profile_picture.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        
+                                <!--Contents for Profile ends here-->
                                 </div>
                                 <?php endif; ?>
                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('modify-details-employee')): ?>
                                 <div class="col-md-9">
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="Basic" role="tabpanel"
-                                             aria-labelledby="basic-tab">
+                                    <div class="" id="">
+                                        <div class="" id="Basic" role="">
                                             <!--Contents for Basic starts here-->
                                             <?php echo e(__('Basic Information')); ?>
 
@@ -149,9 +107,9 @@
 
 
                                                     <div class="col-md-4 form-group">
-                                                        <label><?php echo e(trans('file.Username')); ?></label>
-                                                        <input type="text" name="username" id="username"
-                                                               placeholder="<?php echo e(trans('file.Username')); ?>" required
+                                                        <label><?php echo e(trans('Employee ID')); ?></label>
+                                                        <input disabled type="text" name="username" id="username"
+                                                               placeholder="<?php echo e(trans('Employee ID')); ?>" required
                                                                class="form-control"
                                                                value="<?php echo e($employee->user->username); ?>">
                                                     </div>
@@ -411,49 +369,42 @@
                                         <?php endif; ?>
 
                                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('view-details-employee')): ?>
-                                        <div class="tab-pane fade" id="Immigration" role="tabpanel"
-                                             aria-labelledby="immigration-tab">
-                                            <?php echo e(__('Assigned Immigration')); ?>
-
-                                            <hr>
-                                            <?php echo $__env->make('employee.immigration.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                        </div>
-                                        <div class="tab-pane fade" id="Emergency" role="tabpanel"
+                                        <!--<div class="" id="Immigration" role="tabpanel"-->
+                                        <!--     aria-labelledby="immigration-tab">-->
+                                        <!--    <?php echo e(__('Assigned Immigration')); ?>-->
+                                        <!--    <hr>-->
+                                        <!--    <?php echo $__env->make('employee.immigration.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>-->
+                                        <!--</div>-->
+                                        <div class="" id="Emergency" role="tabpanel"
                                              aria-labelledby="emergency-tab">
                                             <?php echo e(__('Emergency Contacts')); ?>
 
                                             <hr>
                                             <?php echo $__env->make('employee.emergency_contacts.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
-                                        <div class="tab-pane fade" id="Social_profile" role="tabpanel"
-                                             aria-labelledby="social_profile-tab">
-                                            <?php echo e(__('Social Profile')); ?>
-
-                                            <hr>
-                                            <?php echo $__env->make('employee.social_profile.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                        </div>
-                                        <div class="tab-pane fade" id="Document" role="tabpanel"
+                                
+                                        <div class="" id="Document" role="tabpanel"
                                              aria-labelledby="document-tab">
                                             <?php echo e(__('All Documents')); ?>
 
                                             <hr>
                                             <?php echo $__env->make('employee.documents.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
-                                        <div class="tab-pane fade" id="Qualification" role="tabpanel"
+                                        <div class="" id="Qualification" role="tabpanel"
                                              aria-labelledby="qualification-tab">
                                             <?php echo e(__('All Qualifications')); ?>
 
                                             <hr>
                                             <?php echo $__env->make('employee.qualifications.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
-                                        <div class="tab-pane fade" id="Work_experience" role="tabpanel"
+                                        <div class="" id="Work_experience" role="tabpanel"
                                              aria-labelledby="work_experience-tab">
                                             <?php echo e(__('Work Experience')); ?>
 
                                             <hr>
                                             <?php echo $__env->make('employee.work_experience.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
-                                        <div class="tab-pane fade" id="Bank_account" role="tabpanel"
+                                        <div class="" id="Bank_account" role="tabpanel"
                                              aria-labelledby="bank_account-tab">
                                             <?php echo e(__('Bank Account')); ?>
 
@@ -467,16 +418,7 @@
                             </div>
                             <!--Contents for General Ends here-->
                         </div>
-                        <div class="tab-pane fade" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <!--Contents for Profile starts here-->
-                            <?php echo e(__('Profile Picture')); ?>
-
-                            <hr>
-
-                        <?php echo $__env->make('employee.profile_picture.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-                        <!--Contents for Profile ends here-->
-                        </div>
+                        
 
                         <div class="tab-pane fade" id="Set_salary" role="tabpanel" aria-labelledby="set_salary-tab">
                             <!--Contents for Contact starts here-->
@@ -571,35 +513,15 @@
                 autoclose: true,
             }).datepicker("setDate", new Date());
         });
+        
+        <?php echo $__env->make('employee.emergency_contacts.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('employee.documents.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('employee.qualifications.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('employee.work_experience.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('employee.bank_account.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('employee.profile_picture.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-        $('[data-table="immigration"]').one('click', function (e) {
-                <?php echo $__env->make('employee.immigration.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-        });
-
-        $('[data-table="emergency"]').one('click', function (e) {
-            <?php echo $__env->make('employee.emergency_contacts.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
-
-        $('[data-table="document"]').one('click', function (e) {
-                <?php echo $__env->make('employee.documents.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
-
-        $('[data-table="qualification"]').one('click', function (e) {
-            <?php echo $__env->make('employee.qualifications.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
-
-        $('[data-table="work_experience"]').one('click', function (e) {
-            <?php echo $__env->make('employee.work_experience.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
-
-        $('[data-table="bank_account"]').one('click', function (e) {
-            <?php echo $__env->make('employee.bank_account.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
-
-        $('#profile-tab').one('click', function (e) {
-            <?php echo $__env->make('employee.profile_picture.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        });
+        
 
         $('#set_salary-tab').one('click', function (e) {
            <?php echo $__env->make('employee.salary.basic.index_js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> //employee.salary.index_js.blade.php - both are same

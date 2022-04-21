@@ -77,7 +77,7 @@
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <label><?php echo e(trans('file.Username')); ?> <span class="text-danger">*</span></label>
+                                    <label><?php echo e(trans('User ID')); ?> <span class="text-danger">*</span></label>
                                     <input type="text" name="username" id="username"
                                            placeholder="<?php echo e(__('Unique Value',['key'=>trans('file.Name')])); ?>"
                                            required class="form-control" value="<?php echo e(old('username')); ?>">
@@ -190,7 +190,7 @@ unset($__errorArgs, $__bag); ?>"
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <label><?php echo e(trans('file.Username')); ?> <span class="text-danger">*</span></label>
+                                    <label><?php echo e(trans('User ID')); ?> <span class="text-danger">*</span></label>
                                     <input type="text" name="username" id="username_edit"
                                            placeholder="<?php echo e(__('Unique Value',['key'=>trans('file.Name')])); ?>"
                                            required class="form-control">

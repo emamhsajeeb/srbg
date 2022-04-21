@@ -31,7 +31,7 @@
                 <tr>
                     <th class="not-exported"></th>
                     <th><?php echo e(__('Image')); ?></th>
-                    <th><?php echo e(trans('file.Username')); ?></th>
+                    <th><?php echo e(trans('User ID')); ?></th>
                     <th><?php echo e(__('Permission Role')); ?></th>
                     <th class="not-exported"><?php echo e(__('Assign Role')); ?></th>
                 </tr>

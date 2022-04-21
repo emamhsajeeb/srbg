@@ -76,7 +76,7 @@
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <label>{{trans('file.Username')}} <span class="text-danger">*</span></label>
+                                    <label>{{trans('User ID')}} <span class="text-danger">*</span></label>
                                     <input type="text" name="username" id="username"
                                            placeholder="{{__('Unique Value',['key'=>trans('file.Name')])}}"
                                            required class="form-control" value="{{ old('username') }}">
@@ -175,7 +175,7 @@
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <label>{{trans('file.Username')}} <span class="text-danger">*</span></label>
+                                    <label>{{trans('User ID')}} <span class="text-danger">*</span></label>
                                     <input type="text" name="username" id="username_edit"
                                            placeholder="{{__('Unique Value',['key'=>trans('file.Name')])}}"
                                            required class="form-control">

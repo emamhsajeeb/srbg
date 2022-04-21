@@ -94,7 +94,7 @@ class EmployeeController extends Controller {
                             $profile_photo = '<img src="'. $url .'" class="profile-photo md" style="height:35px;width:35px"/>';
                         }
                         $name  = '<span><a href="employees/' . $row->id .'" class="d-block text-bold" style="color:#24ABF2">'.$row->full_name.'</a></span>';
-                        $username = "<span>Username: &nbsp;".($row->user->username ?? '')."</span>";
+                        $username = "<span>Employee ID: &nbsp;".($row->user->username ?? '')."</span>";
                         $gender= "<span>Gender: &nbsp;".($row->gender ?? '')."</span>";
                         $shift = "<span>Shift: &nbsp;".($row->officeShift->shift_name ?? '')."</span>";
                         if(config('variable.currency_format') =='suffix'){
@@ -177,16 +177,15 @@ class EmployeeController extends Controller {
 			if (request()->ajax())
 			{
 				$validator = Validator::make($request->only('first_name', 'last_name', 'email', 'contact_no', 'date_of_birth', 'gender',
-					'username', 'role_users_id', 'password', 'password_confirmation', 'company_id', 'department_id', 'designation_id','office_shift_id','attendance_type','joining_date'),
+					'role_users_id', 'password', 'password_confirmation', 'company_id', 'department_id', 'designation_id','office_shift_id','attendance_type','joining_date'),
 					[
 						'first_name' => 'required',
 						'last_name' => 'required',
 						'email' => 'required|email|unique:users,email',
 						'contact_no' => 'required|numeric|unique:users,contact_no',
 						'date_of_birth' => 'required',
-						'username' => 'required|unique:users,username',
 						'role_users_id' => 'required',
-						'password' => 'required|min:4|confirmed',
+						'password' => 'required|min:4',
 						'company_id' => 'required',
 						'department_id' => 'required',
 						'designation_id' => 'required',
@@ -201,6 +200,12 @@ class EmployeeController extends Controller {
 				{
 					return response()->json(['errors' => $validator->errors()->all()]);
 				}
+				
+				$department = department::find($request->department_id);
+				$department_name = $department->department_name;
+				$contact = strval($request->contact_no);
+				$contact_no = substr($contact,-6);
+				$employee_id = substr($department_name,0,3);
 
 				$data = [];
 				$data['first_name'] = $request->first_name;
@@ -223,7 +228,7 @@ class EmployeeController extends Controller {
 				$user = [];
 				$user['first_name'] = $request->first_name;
 				$user['last_name'] = $request->last_name;
-				$user['username'] = strtolower(trim($request->username));
+				$user['username'] = strtoupper($employee_id).$contact_no;
 				$user['email'] = strtolower(trim($request->email));
 				$user['password'] = bcrypt($request->password);
 				$user ['role_users_id'] = $request->role_users_id;
@@ -235,7 +240,7 @@ class EmployeeController extends Controller {
 
 				if (isset($photo))
 				{
-					$new_user = $request->username;
+					$new_user = $request->first_name;
 					if ($photo->isValid())
 					{
 						$file_name = preg_replace('/\s+/', '', $new_user) . '_' . time() . '.' . $photo->getClientOriginalExtension();
@@ -268,7 +273,10 @@ class EmployeeController extends Controller {
 					return response()->json(['error' => $e->getMessage()]);
 				}
 
-				return response()->json(['success' => __('Data Added successfully.')]);
+				return response()->json([
+				    'success' => __('Data Added successfully.'),
+				    'id' => __($created_user->id),
+				    ]);
 			}
 		}
 
@@ -401,7 +409,7 @@ class EmployeeController extends Controller {
 			if (request()->ajax())
 			{
 				$validator = Validator::make($request->only('first_name', 'last_name', 'email', 'contact_no', 'date_of_birth', 'gender',
-					'username', 'role_users_id', 'company_id', 'department_id', 'designation_id', 'office_shift_id', 'location_id', 'status_id',
+					'role_users_id', 'company_id', 'department_id', 'designation_id', 'office_shift_id', 'location_id', 'status_id',
 					'marital_status', 'joining_date', 'exit_date', 'permission_role_id', 'address', 'city', 'state', 'country', 'zip_code','attendance_type','total_leave'
 				),
 					[
@@ -410,7 +418,6 @@ class EmployeeController extends Controller {
 						'email' => 'required|email|unique:users,email,' . $employee,
 						'contact_no' => 'required|numeric|unique:users,contact_no,' . $employee,
 						'date_of_birth' => 'required',
-						'username' => 'required|unique:users,username,' . $employee,
 						'role_users_id' => 'required',
 						'status_id' => 'required',
 						'attendance_type' => 'required',

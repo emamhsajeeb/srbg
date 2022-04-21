@@ -22,17 +22,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center">
-                        <h2>{{$employee->user->username}}</h2>
+                        <h2>{{$employee->user->first_name." ".$employee->user->last_name}}</h2>
                     </div>
                     <ul class="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="general-tab" data-toggle="tab" href="#General" role="tab"
                                aria-controls="General" aria-selected="true">{{trans('file.General')}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab"
-                               aria-controls="Profile" aria-selected="false">{{trans('file.Profile')}}</a>
-                        </li>
+                        <!--<li class="nav-item">-->
+                        <!--    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab"-->
+                        <!--       aria-controls="Profile" aria-selected="false">{{trans('file.Profile')}}</a>-->
+                        <!--</li>-->
                         <li class="nav-item">
                             <a class="nav-link" id="set_salary-tab" data-toggle="tab" href="#Set_salary" role="tab"
                                aria-controls="Set_salary" aria-selected="false">{{__('Set Salary')}}</a>
@@ -63,63 +63,20 @@
                             {{__('General Info')}}
                             <hr>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <ul class="nav nav-tabs vertical" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#Basic"
-                                               role="tab" aria-controls="Basic"
-                                               aria-selected="true">{{trans('file.Basic')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('immigrations.show',$employee)}}"
-                                               id="immigration-tab" data-toggle="tab" data-table="immigration"
-                                               data-target="#Immigration" role="tab" aria-controls="Immigration"
-                                               aria-selected="false">{{trans('file.Immigration')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('contacts.show',$employee)}}"
-                                               id="emergency-tab" data-toggle="tab" data-table="emergency"
-                                               data-target="#Emergency" role="tab" aria-controls="Emergency"
-                                               aria-selected="false">{{__('Emergency Contacts')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('social_profile.show',$employee)}}"
-                                               id="social_profile-tab" data-toggle="tab" data-table="social_profile"
-                                               data-target="#Social_profile" role="tab" aria-controls="Social_profile"
-                                               aria-selected="false">{{__('Social Profile')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('documents.show',$employee)}}"
-                                               id="document-tab" data-toggle="tab" data-table="document"
-                                               data-target="#Document" role="tab" aria-controls="Document"
-                                               aria-selected="false">{{trans('file.Document')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('qualifications.show',$employee)}}"
-                                               id="qualification-tab" data-toggle="tab" data-table="qualification"
-                                               data-target="#Qualification" role="tab" aria-controls="Qualification"
-                                               aria-selected="false">{{trans('file.Qualification')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('work_experience.show',$employee)}}"
-                                               id="work_experience-tab" data-toggle="tab" data-table="work_experience"
-                                               data-target="#Work_experience" role="tab" aria-controls="Work_experience"
-                                               aria-selected="false">{{__('Work Experience')}}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('bank_account.show',$employee)}}"
-                                               id="bank_account-tab" data-toggle="tab" data-table="bank_account"
-                                               data-target="#Bank_account" role="tab" aria-controls="Bank_account"
-                                               aria-selected="false">{{__('Bank Account')}}</a>
-                                        </li>
-                                    </ul>
+                                <div class="col-md-3" id="Profile">
+                                    <!--Contents for Profile starts here-->
+                                    {{__('Profile Picture')}}
+                                    <hr>
+        
+                                @include('employee.profile_picture.index')
+        
+                                <!--Contents for Profile ends here-->
                                 </div>
                                 @endcan
                                 @can('modify-details-employee')
                                 <div class="col-md-9">
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="Basic" role="tabpanel"
-                                             aria-labelledby="basic-tab">
+                                    <div class="" id="">
+                                        <div class="" id="Basic" role="">
                                             <!--Contents for Basic starts here-->
                                             {{__('Basic Information')}}
                                             <hr>
@@ -148,9 +105,9 @@
 
 
                                                     <div class="col-md-4 form-group">
-                                                        <label>{{trans('file.Employee ID')}}</label>
-                                                        <input type="text" name="username" id="username"
-                                                               placeholder="{{trans('file.Employee ID')}}" required
+                                                        <label>{{trans('Employee ID')}}</label>
+                                                        <input disabled type="text" name="username" id="username"
+                                                               placeholder="{{trans('Employee ID')}}" required
                                                                class="form-control"
                                                                value="{{$employee->user->username}}">
                                                     </div>
@@ -409,43 +366,38 @@
                                         @endcan
 
                                         @can('view-details-employee')
-                                        <div class="tab-pane fade" id="Immigration" role="tabpanel"
-                                             aria-labelledby="immigration-tab">
-                                            {{__('Assigned Immigration')}}
-                                            <hr>
-                                            @include('employee.immigration.index')
-                                        </div>
-                                        <div class="tab-pane fade" id="Emergency" role="tabpanel"
+                                        <!--<div class="" id="Immigration" role="tabpanel"-->
+                                        <!--     aria-labelledby="immigration-tab">-->
+                                        <!--    {{__('Assigned Immigration')}}-->
+                                        <!--    <hr>-->
+                                        <!--    @include('employee.immigration.index')-->
+                                        <!--</div>-->
+                                        <div class="" id="Emergency" role="tabpanel"
                                              aria-labelledby="emergency-tab">
                                             {{__('Emergency Contacts')}}
                                             <hr>
                                             @include('employee.emergency_contacts.index')
                                         </div>
-                                        <div class="tab-pane fade" id="Social_profile" role="tabpanel"
-                                             aria-labelledby="social_profile-tab">
-                                            {{__('Social Profile')}}
-                                            <hr>
-                                            @include('employee.social_profile.index')
-                                        </div>
-                                        <div class="tab-pane fade" id="Document" role="tabpanel"
+                                
+                                        <div class="" id="Document" role="tabpanel"
                                              aria-labelledby="document-tab">
                                             {{__('All Documents')}}
                                             <hr>
                                             @include('employee.documents.index')
                                         </div>
-                                        <div class="tab-pane fade" id="Qualification" role="tabpanel"
+                                        <div class="" id="Qualification" role="tabpanel"
                                              aria-labelledby="qualification-tab">
                                             {{__('All Qualifications')}}
                                             <hr>
                                             @include('employee.qualifications.index')
                                         </div>
-                                        <div class="tab-pane fade" id="Work_experience" role="tabpanel"
+                                        <div class="" id="Work_experience" role="tabpanel"
                                              aria-labelledby="work_experience-tab">
                                             {{__('Work Experience')}}
                                             <hr>
                                             @include('employee.work_experience.index')
                                         </div>
-                                        <div class="tab-pane fade" id="Bank_account" role="tabpanel"
+                                        <div class="" id="Bank_account" role="tabpanel"
                                              aria-labelledby="bank_account-tab">
                                             {{__('Bank Account')}}
                                             <hr>
@@ -458,15 +410,7 @@
                             </div>
                             <!--Contents for General Ends here-->
                         </div>
-                        <div class="tab-pane fade" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <!--Contents for Profile starts here-->
-                            {{__('Profile Picture')}}
-                            <hr>
-
-                        @include('employee.profile_picture.index')
-
-                        <!--Contents for Profile ends here-->
-                        </div>
+                        
 
                         <div class="tab-pane fade" id="Set_salary" role="tabpanel" aria-labelledby="set_salary-tab">
                             <!--Contents for Contact starts here-->
@@ -556,35 +500,15 @@
                 autoclose: true,
             }).datepicker("setDate", new Date());
         });
+        
+        @include('employee.emergency_contacts.index_js')
+        @include('employee.documents.index_js')
+        @include('employee.qualifications.index_js')
+        @include('employee.work_experience.index_js')
+        @include('employee.bank_account.index_js')
+        @include('employee.profile_picture.index_js')
 
-        $('[data-table="immigration"]').one('click', function (e) {
-                @include('employee.immigration.index_js')
-
-        });
-
-        $('[data-table="emergency"]').one('click', function (e) {
-            @include('employee.emergency_contacts.index_js')
-        });
-
-        $('[data-table="document"]').one('click', function (e) {
-                @include('employee.documents.index_js')
-        });
-
-        $('[data-table="qualification"]').one('click', function (e) {
-            @include('employee.qualifications.index_js')
-        });
-
-        $('[data-table="work_experience"]').one('click', function (e) {
-            @include('employee.work_experience.index_js')
-        });
-
-        $('[data-table="bank_account"]').one('click', function (e) {
-            @include('employee.bank_account.index_js')
-        });
-
-        $('#profile-tab').one('click', function (e) {
-            @include('employee.profile_picture.index_js')
-        });
+        
 
         $('#set_salary-tab').one('click', function (e) {
            @include('employee.salary.basic.index_js') //employee.salary.index_js.blade.php - both are same

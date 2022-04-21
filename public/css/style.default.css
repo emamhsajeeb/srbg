@@ -1405,7 +1405,7 @@ form label {
 .register-page .form-inner {
     border-radius: 5px;
     padding: 40px 30px;
-    background: #fff;
+    background: white;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     width: 100%;
@@ -3237,6 +3237,18 @@ a {
     100% {
         transform: rotate(360deg);
     }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .animate-bottom {

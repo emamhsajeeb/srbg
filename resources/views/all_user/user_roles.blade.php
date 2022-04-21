@@ -45,7 +45,7 @@
                 <tr>
                     <th class="not-exported"></th>
                     <th>{{__('Image')}}</th>
-                    <th>{{trans('file.Username')}}</th>
+                    <th>{{trans('User ID')}}</th>
                     <th>{{__('Permission Role')}}</th>
                     <th class="not-exported">{{__('Assign Role')}}</th>
                 </tr>

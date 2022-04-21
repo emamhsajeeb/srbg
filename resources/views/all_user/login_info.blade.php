@@ -13,7 +13,7 @@
                 <tr>
                     <th class="not-exported"></th>
                     <th>{{__('Image')}}</th>
-                    <th>{{trans('file.Username')}}</th>
+                    <th>User ID</th>
                     <th>{{__('Last Login Date')}}</th>
                     <th>{{__('Last Login IP')}}</th>
                     <th>{{trans('file.status')}}</th>

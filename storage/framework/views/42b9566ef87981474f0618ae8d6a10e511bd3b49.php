@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title','Contact'); ?>
 
 <?php $__env->startSection('content'); ?>

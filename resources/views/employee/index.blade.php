@@ -212,9 +212,9 @@
                             </div>
 
                             <div class="col-md-6 form-group">
-                                <label class="text-bold">{{trans('file.Employee ID')}} <span class="text-danger">*</span></label>
-                                <input type="text" name="username" id="username"
-                                       placeholder="{{__('Unique Value',['key'=>trans('file.Employee ID')])}}"
+                                <label class="text-bold">{{trans('Employee ID')}} <span class="text-danger">*</span></label>
+                                <input disabled type="text" name="username" id="username"
+                                       placeholder="{{__('Auto Generated',['key'=>trans('Employee ID')])}}"
                                        required class="form-control">
                             </div>
 
@@ -241,19 +241,19 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 form-group">
-                                <label class="text-bold">{{__('Confirm Password')}} <span class="text-danger">*</span></label>
-                                <div class="input-group">
-                                    <input id="confirm_pass" type="password"
-                                           class="form-control "
-                                           name="password_confirmation" placeholder="{{__('Re-type Password')}}"
-                                           required autocomplete="new-password">
-                                </div>
-                                <div class="form-group">
-                                    <div class="registrationFormAlert" id="divCheckPasswordMatch">
-                                    </div>
-                                </div>
-                            </div>
+                            <!--<div class="col-md-6 form-group">-->
+                            <!--    <label class="text-bold">{{__('Confirm Password')}} <span class="text-danger">*</span></label>-->
+                            <!--    <div class="input-group">-->
+                            <!--        <input id="confirm_pass" type="password"-->
+                            <!--               class="form-control "-->
+                            <!--               name="password_confirmation" placeholder="{{__('Re-type Password')}}"-->
+                            <!--               required autocomplete="new-password">-->
+                            <!--    </div>-->
+                            <!--    <div class="form-group">-->
+                            <!--        <div class="registrationFormAlert" id="divCheckPasswordMatch">-->
+                            <!--        </div>-->
+                            <!--    </div>-->
+                            <!--</div>-->
 
                             <div class="col-md-6 form-group">
                                 <label class="text-bold">{{__('Attendance Type')}} <span class="text-danger">*</span></label>
@@ -315,6 +315,8 @@
             </div>
         </div>
     </div>
+    
+    
 
     <script type="text/javascript">
 
@@ -607,14 +609,14 @@
 
 
 
-        $('#confirm_pass').on('input', function () {
+        // $('#confirm_pass').on('input', function () {
 
-            if ($('input[name="password"]').val() != $('input[name="password_confirmation"]').val())
-                $("#divCheckPasswordMatch").html('{{__('Password does not match! please type again')}}');
-            else
-                $("#divCheckPasswordMatch").html('{{__('Password matches!')}}');
+        //     if ($('input[name="password"]').val() != $('input[name="password_confirmation"]').val())
+        //         $("#divCheckPasswordMatch").html('{{__('Password does not match! please type again')}}');
+        //     else
+        //         $("#divCheckPasswordMatch").html('{{__('Password matches!')}}');
 
-        });
+        // });
 
 
         $('.dynamic').change(function () {

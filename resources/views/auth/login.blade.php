@@ -50,8 +50,8 @@
 
 <body>
 <div class="page login-page">
-    <div class="container">
-        <div class="form-outer text-center d-flex align-items-center">
+    <div class="container" style="background-image: url(https://english.scrbg.com/upload/201906/11/201906111141447320.png)">
+        <div class="col-sm-3 form-outer text-center float-right">
             <div class="form-inner">
                 <div class="logo"><span><img style="max-width: 50%;" src="{{ url('public/logo/logo.png')}}" ></span></div>
                 @include('shared.errors')

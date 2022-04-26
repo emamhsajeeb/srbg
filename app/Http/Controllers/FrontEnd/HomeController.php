@@ -6,7 +6,7 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\CMS;
 
-class HomeController {
+class HomeController extends Controller {
 
 	public function index()
 	{

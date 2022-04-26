@@ -27,7 +27,7 @@ Route::group(['middleware' => ['XSS']], function ()
 	});
 
 	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('/login', 'RouteClosureHandlerController@redirectToLogin')->name('redirectToLogin');
+	Route::get('login', 'RouteClosureHandlerController@redirectToLogin')->name('redirectToLogin');
 	Route::get('help', 'RouteClosureHandlerController@help')->name('help');
 
 	Route::get('home', 'FrontEnd\HomeController@index')->name('home.front');

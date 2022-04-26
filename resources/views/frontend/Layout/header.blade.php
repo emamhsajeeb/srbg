@@ -16,12 +16,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
-<link href="{{assets('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-<link href="{{assets('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
-<link href="{{assets('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+<link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+<link href="{{asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
+<link href="{{asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="{{assets('css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link href="{{assets('css/frontend.css') }}" rel="stylesheet">
+<link href="{{asset('css/frontend.css') }}" rel="stylesheet">

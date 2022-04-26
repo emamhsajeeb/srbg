@@ -9,7 +9,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="{{asset('public/img/carousel-1.jpg') }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="{{asset('public/img/carousel-2.jpg') }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <p class="mb-4">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos labore</p>
-                <img src="img/signature.jpg" alt="">
+                <img src="{{asset('public/img/signature.jpg') }}" alt="">
             </div>
             <div class="col-lg-5 pb-5" style="min-height: 400px;">
                 <div class="position-relative bg-dark-radial h-100 ms-5">
@@ -84,7 +84,7 @@
         <div class="row g-5">
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-1.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-1.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-building text-primary"></i>
                     </div>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-2.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-2.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-home text-primary"></i>
                     </div>
@@ -110,7 +110,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-3.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-3.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-drafting-compass text-primary"></i>
                     </div>
@@ -123,7 +123,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-4.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-4.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-palette text-primary"></i>
                     </div>
@@ -136,7 +136,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-5.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-5.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-tools text-primary"></i>
                     </div>
@@ -149,7 +149,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('public/img/service-6.jpg') }}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-paint-brush text-primary"></i>
                     </div>

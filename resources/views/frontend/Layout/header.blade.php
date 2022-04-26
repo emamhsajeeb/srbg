@@ -1,65 +1,27 @@
+<meta charset="utf-8">
+<title>WEBUILD -  Construction Company Website Template Free</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
 
-    <title>{{ __('PeoplePro') }}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
 
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo asset('public/vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css">
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo asset('public/vendor/bootstrap/css/bootstrap-datepicker.min.css') ?>"
-          type="text/css">
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?php echo asset('public/vendor/font-awesome/css/font-awesome.min.css') ?>"
-          type="text/css">
-
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="{{ asset('public/vendor/font-awesome/css/font-awesome.min.css') }}"
-          type="text/css">
-    <!-- Dripicons icon font-->
-    <link rel="stylesheet" href="{{ asset('public/vendor/dripicons/webfont.css') }}" type="text/css">
-    <!-- Google fonts - Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <!-- jQuery Circle-->
-    <link rel="stylesheet" href="<?php echo asset('public/css/grasp_mobile_progress_circle-1.0.0.min.css') ?>"
-          type="text/css">
-    <!-- Custom Scrollbar-->
-    <!-- virtual keybord stylesheet-->
-    <link rel="stylesheet" href="<?php echo asset('public/vendor/keyboard/css/keyboard.css') ?>" type="text/css">
-    <!-- date range stylesheet-->
-    <link rel="stylesheet" href="<?php echo asset('public/vendor/daterange/css/daterangepicker.min.css') ?>"
-          type="text/css">
-
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{ asset('public/css/style.default.css') }}" id="theme-stylesheet"
-          type="text/css">
-
-
-
-    <script type="text/javascript" src="<?php echo asset('public/vendor/jquery/jquery.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('public/vendor/jquery/jquery-ui.min.js') ?>"></script>
-    <script type="text/javascript"
-            src="<?php echo asset('public/vendor/jquery/bootstrap-datepicker.min.js') ?>"></script>
-
-    <script type="text/javascript" src="{{ asset('public/vendor/popper.js/umd/popper.min.js') }}">
-    </script>
-    <script type="text/javascript" src="<?php echo asset('public/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-
-
-    <script type="text/javascript" src="<?php echo asset('public/vendor/jquery.cookie/jquery.cookie.js') ?>">
-    </script>
-    <script type="text/javascript"
-            src="<?php echo asset('public/vendor/jquery-validation/jquery.validate.min.js') ?>"></script>
-
-
-    <script type="text/javascript" src="<?php echo asset('public/js/front.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('public/vendor/daterange/js/moment.min.js') ?>"></script>
-    <script type="text/javascript"
-            src="<?php echo asset('public/vendor/tinymce/js/tinymce/tinymce.min.js') ?>"></script>
-
+<!-- Template Stylesheet -->
+<link href="css/frontend.css" rel="stylesheet">

@@ -10,7 +10,7 @@ class HomeController {
 
 	public function index()
 	{
-		return view('frontend.cms.home',compact('home'));
+		return view('frontend.cms.home');
 	}
 
 

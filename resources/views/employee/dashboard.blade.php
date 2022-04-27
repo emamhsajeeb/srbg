@@ -106,7 +106,7 @@
 
                                                     <div class="col-md-4 form-group">
                                                         <label>{{trans('Employee ID')}}</label>
-                                                        <input disabled type="text" name="username" id="username"
+                                                        <input type="text" name="username" id="username"
                                                                placeholder="{{trans('Employee ID')}}" required
                                                                class="form-control"
                                                                value="{{$employee->user->username}}">

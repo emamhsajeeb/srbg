@@ -26,8 +26,7 @@ Route::group(['middleware' => ['XSS']], function ()
 		return view('pdf');
 	});
 
-	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('/log-in', 'RouteClosureHandlerController@redirectToLogin')->name('redirectToLogin');
+	Route::get('/', 'RouteClosureHandlerController@redirectToLogin')->name('redirectToLogin');
 	Route::get('help', 'RouteClosureHandlerController@help')->name('help');
 
 	Route::get('home', 'FrontEnd\HomeController@index')->name('home.front');
